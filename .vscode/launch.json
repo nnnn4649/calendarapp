@@ -1,0 +1,81 @@
+{
+    // IntelliSense を使用して利用可能な属性を学べます。
+    // 既存の属性の説明をホバーして表示します。
+    // 詳細情報は次を確認してください: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Flutter",
+            "type": "dart",
+            "request": "launch",
+            "program": "flutter_calendar/lib/main.dart"
+        },
+        {
+            "name": "test",
+            "cwd": "flutter_calendar/lib/main.dart",
+            "request": "launch",
+            "type": "dart"
+        },
+        
+        {
+            "name": "calendar_logic",
+            "cwd": "calendar_logic",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "calendar_logic (profile mode)",
+            "cwd": "calendar_logic",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "calendar_logic (release mode)",
+            "cwd": "calendar_logic",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "calendar_widget",
+            "cwd": "calendar_widget",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "calendar_widget (profile mode)",
+            "cwd": "calendar_widget",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "calendar_widget (release mode)",
+            "cwd": "calendar_widget",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "example",
+            "cwd": "calendar_widget/example",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "example (profile mode)",
+            "cwd": "calendar_widget/example",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "example (release mode)",
+            "cwd": "calendar_widget/example",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        }
+    ]
+}
