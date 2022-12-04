@@ -49,7 +49,7 @@ class _WeekRow extends StatelessWidget {
   }
 }
 
-class _DateBox extends StatelessWidget {
+class _DateBox extends StatefulWidget {
   const _DateBox(
     this.label, {
     required this.weekday,
@@ -61,22 +61,71 @@ class _DateBox extends StatelessWidget {
   final int weekday;
 
   @override
+  State<_DateBox> createState() => _DateBoxState();
+}
+
+var _count = 0;
+
+class _DateBoxState extends State<_DateBox> {
+  @override
   Widget build(BuildContext context) {
     return AspectRatio(
       aspectRatio: 1,
-      child: Container(
-        decoration: BoxDecoration(
-          border: Border.all(color: Colors.black12, width: 1),
-          color: weekday == 6
-              ? Colors.blue.shade50
-              : weekday == 7
-                  ? Colors.red.shade50
-                  : Colors.white,
-        ),
-        child: Center(
-          child: Text(label),
+      child: GestureDetector(
+        onTap: () {
+          showDialog<void>(
+              context: context,
+              builder: (_) {
+                return AlertDialogSample();
+              });
+          //       print("クリックされたぞ");
+        },
+        //    child: Text("クリックしてみそ"),
+        child: Container(
+          decoration: BoxDecoration(
+            border: Border.all(color: Colors.black12, width: 1),
+            color: widget.weekday == 6
+                ? Colors.blue.shade50
+                : widget.weekday == 7
+                    ? Colors.red.shade50
+                    : Colors.white,
+          ),
+          //    child: Center(
+          //child: Text(widget.label),
+          // ),
+          // child: GestureDetector(
+          child: Text(widget.label),
+          //    child: Container(
+          //    width: 150,
+          //  height: 150,
+          // color: Colors.blue,
+          //),
         ),
       ),
+    );
+  }
+}
+
+class AlertDialogSample extends StatelessWidget {
+  const AlertDialogSample({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(
+      title: Text('予定の登録'),
+      content: Text('予定を登録しますか？'),
+      actions: <Widget>[
+        GestureDetector(
+          child: Text('いいえ'),
+          onTap: () {
+            Navigator.pop(context);
+          },
+        ),
+        GestureDetector(
+          child: Text('はい'),
+          onTap: () {},
+        )
+      ],
     );
   }
 }
